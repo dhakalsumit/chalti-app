@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/home/second_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -84,21 +85,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(
                     height: 13,
                   ),
-                  InkWell(
-                    onTap: (){
-                      
-                    },
-                    child: Container(
-                        padding: const EdgeInsets.only(left: 204),
-                        child: const Text(
-                          "FORGOT PASSWORD?",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.purple,
-                              fontSize: 14),
-                              
-                        )
-                        ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 227),
+                    child: TextButton(
+                    
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SecondRoute()),
+                        );
+                      },
+                      child: const Text(
+                        "FORGOT PASSWORD?",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple,
+                            fontSize: 14),
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 40,
@@ -112,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Center(
                         child: Title(
                             color: Colors.white,
-                            child: Text(
+                            child: const Text(
                               "LOGIN",
                               style: TextStyle(
                                   fontSize: 20,
