@@ -11,19 +11,93 @@ class _MainpageState extends State<Mainpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Stack(
-          children: [
-            Container(
-              height: 250,
-              decoration: BoxDecoration(
-                  color: Colors.purple,
-                  borderRadius: BorderRadius.circular(10)),
-            )
-          ],
-        )
-      ],
+        body: SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                height: 250,
+                decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Container(
+                  // color: Colors.white12,
+                  margin: const EdgeInsets.only(
+                    top: 40,
+                    left: 10,
+                    right: 10,
+                  ),
+                  padding: const EdgeInsets.only(top: 10, bottom: 10),
+                  // color: Colors.amber,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(60),
+                                image: const DecorationImage(
+                                    image: AssetImage('images/sudip.jpg'))),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text(
+                            "Sudip",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(
+                            width: 80,
+                          ),
+                          const Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(
+                            width: 25,
+                          ),
+                          const Icon(
+                            Icons.card_giftcard,
+                            color: Colors.pinkAccent,
+                          ),
+                          const SizedBox(
+                            width: 25,
+                          ),
+                          const Icon(
+                            Icons.notifications_sharp,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        height: 70,
+                        width: 150,
+                        padding:const EdgeInsets.only(
+                            left: 10, right: 180, top: 1, bottom: 30),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: const Icon(Icons.currency_rupee),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     ));
   }
 }
