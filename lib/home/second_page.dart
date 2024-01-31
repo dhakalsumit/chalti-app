@@ -27,7 +27,7 @@ class _SecondRouteState extends State<SecondRoute> {
                       fontSize: 24),
                 ),
                 const Text(
-                  "Recover your khalti password",
+                  "Recover your chalti password",
                   style: TextStyle(
                       height: 3,
                       fontWeight: FontWeight.w500,
@@ -37,6 +37,8 @@ class _SecondRouteState extends State<SecondRoute> {
                 const SizedBox(height: 10),
                 TextField(
                   decoration: InputDecoration(
+                    contentPadding:
+                        const EdgeInsets.only(top: 16, left: 10, bottom: 12),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
                     label: const Text('Mobile Number'),
@@ -44,7 +46,7 @@ class _SecondRouteState extends State<SecondRoute> {
                 ),
                 const SizedBox(height: 40),
                 Container(
-                  height: 55 ,
+                  height: 50,
                   decoration: BoxDecoration(
                       color: Colors.purple,
                       borderRadius: BorderRadius.circular(5)),

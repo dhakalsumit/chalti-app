@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/home/main_page.dart';
 import 'package:flutterapp/home/second_page.dart';
+import 'package:flutterapp/home/sign_in.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -58,9 +59,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   TextField(
                     decoration: InputDecoration(
+                      contentPadding:
+                          const EdgeInsets.only(top: 16, left: 10, bottom: 12),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      label: const Text('Mobile Number/Email'),
+                      label: const Text(
+                        'Mobile Number/Email',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, color: Colors.black54),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -69,6 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextField(
                     obscureText: isVisible ? true : false,
                     decoration: InputDecoration(
+                      contentPadding:
+                          const EdgeInsets.only(top: 16, left: 10, bottom: 12),
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -80,14 +89,18 @@ class _MyHomePageState extends State<MyHomePage> {
                               : const Icon(Icons.visibility)),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      label: const Text('Password'),
+                      label: const Text(
+                        'Password',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, color: Colors.black54),
+                      ),
                     ),
                   ),
                   const SizedBox(
                     height: 13,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 227),
+                    padding: const EdgeInsets.only(left: 176),
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -106,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 30,
                   ),
                   Container(
                     height: 50,
@@ -148,13 +161,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Center(
-                      child: Text(
-                    "CREATE AN ACCOUNT",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.purple),
+                  Center(
+                      child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignIn()),
+                      );
+                    },
+                    child: const Text(
+                      "CREATE AN ACCOUNT",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.purple),
+                    ),
                   ))
                 ],
               ),
