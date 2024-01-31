@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/home/main_page.dart';
 import 'package:flutterapp/home/second_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -88,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 227),
                     child: TextButton(
-                    
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -117,12 +117,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Center(
                         child: Title(
                             color: Colors.white,
-                            child: const Text(
-                              "LOGIN",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Mainpage()),
+                                );
+                              },
+                              child: const Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ))),
                   ),
                   const SizedBox(
