@@ -55,9 +55,10 @@ class _MainpageState extends State<Mainpage> {
                                 fontWeight: FontWeight.w500),
                           ),
                           const SizedBox(
-                            width: 80,
+                            width: 120,
                           ),
                           const Icon(
+                            size: 30,
                             Icons.search,
                             color: Colors.white,
                           ),
@@ -65,6 +66,7 @@ class _MainpageState extends State<Mainpage> {
                             width: 25,
                           ),
                           const Icon(
+                            size: 30,
                             Icons.card_giftcard,
                             color: Colors.pinkAccent,
                           ),
@@ -72,6 +74,7 @@ class _MainpageState extends State<Mainpage> {
                             width: 25,
                           ),
                           const Icon(
+                            size: 30,
                             Icons.notifications_sharp,
                             color: Colors.white,
                           ),
@@ -80,15 +83,43 @@ class _MainpageState extends State<Mainpage> {
                       const SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        height: 70,
-                        width: 150,
-                        padding:const EdgeInsets.only(
-                            left: 10, right: 180, top: 1, bottom: 30),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Icon(Icons.currency_rupee),
+                      Row(
+                        children: [
+                          Container(
+                            height: 90,
+                            width: 180,
+                            padding: const EdgeInsets.only(
+                                left: 10, right: 10, top: 10, bottom: 30),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.currency_rupee,
+                                      size: 30,
+                                      color: Colors.deepPurple,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "XXX.XX",
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        color: Colors.deepPurple,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                           
+                        ],
                       )
                     ],
                   ),
