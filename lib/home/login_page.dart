@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/backend/auth/authenticator.dart';
 import 'package:flutterapp/home/main_page.dart';
 import 'package:flutterapp/home/second_page.dart';
-import 'package:flutterapp/home/sign_in.dart';
+import 'package:flutterapp/home/register.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -11,6 +12,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late final TextEditingController _emailController;
+  late final TextEditingController _passwordController;
+
+  @override
+  void initState() {
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  login(String email, String password) {
+    final loginAuth = Authenticator();
+    loginAuth.login(email, password);
+  }
+
   bool isVisible = true;
   @override
   Widget build(BuildContext context) {
@@ -58,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 20,
                   ),
                   TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       contentPadding:
                           const EdgeInsets.only(top: 16, left: 10, bottom: 12),
@@ -74,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 20,
                   ),
                   TextField(
+                    controller: _passwordController,
                     obscureText: isVisible ? true : false,
                     decoration: InputDecoration(
                       contentPadding:
@@ -132,6 +157,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.white,
                             child: InkWell(
                               onTap: () {
+                                login(_emailController.text,
+                                    _passwordController.text);
+
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
